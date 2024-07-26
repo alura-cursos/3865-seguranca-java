@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="pt"
       xmlns:th="http://thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+>
 <head>
     <title>Voll.med</title>
     <meta charset="UTF-8">
@@ -12,7 +14,7 @@
 
 <body>
     <div class="wrapper">
-        <div th:replace="~{componentes/_menu.html :: menu}"></div>
+        <div th:replace="~{componentes/_menu.html :: menu}" sec:authorize="isAuthenticated()"></div>
 
         <div class="container">
             <div th:replace="~{componentes/_mensagens.html :: mensagens}" th:remove="tag"></div>
