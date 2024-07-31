@@ -21,6 +21,10 @@ public class ConfiguracoesSeguranca {
                 .username("maria@email.com")
                 .password("{noop}maria123")
                 .build();
-        return new InMemoryUserDetailsManager(usuario1, usuario2);
+        UserDetails usuario3 = User.builder()
+                .username("iasmin@email.com")
+                .password("{noop}iasmin123")
+                .build();
+        return new InMemoryUserDetailsManager(usuario1, usuario2, usuario3);
     }
 }
