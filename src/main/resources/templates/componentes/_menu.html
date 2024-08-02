@@ -6,7 +6,7 @@
         </a>
 
         <nav class="main-nav">
-            <ul class="nav-left">
+            <ul sec:authorize="isAuthenticated()" class="nav-left">
                 <li class="dropdown">
                     <a href="#">CADASTROS <i class="arrow-down"></i></a>
                     <ul class="dropdown-menu">
@@ -20,7 +20,7 @@
                     </ul>
                 </li>
             </ul>
-            <ul class="nav-right">
+            <ul sec:authorize="isAuthenticated()" class="nav-right">
                 <li class="dropdown">
                     <a href="#">Olá, <span sec:authentication="principal.nome"></span> <i class="arrow-down"></i></a>
                     <ul class="dropdown-menu">
@@ -32,6 +32,9 @@
                     </ul>
                 </li>
             </ul>
+            <div class="navbar-form" sec:authorize="!isAuthenticated()">
+                <a class="btn-link" href="#" th:href="@{/login}">Login</a>
+            </div>
         </nav>
     </div>
 </header>

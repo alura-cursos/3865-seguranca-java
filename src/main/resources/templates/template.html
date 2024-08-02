@@ -14,7 +14,7 @@
 
 <body>
     <div class="wrapper">
-        <div th:replace="~{componentes/_menu.html :: menu}" sec:authorize="isAuthenticated()"></div>
+        <div th:replace="~{componentes/_menu.html :: menu}"></div>
 
         <div class="container">
             <div th:replace="~{componentes/_mensagens.html :: mensagens}" th:remove="tag"></div>
